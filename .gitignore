@@ -1,0 +1,36 @@
+# Maven target directory
+target/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# VS Code settings
+.vscode/
+
+# Eclipse project files
+.project
+.classpath
+.settings/
+
+# macOS system files
+.DS_Store
+
+# Logs
+*.log
+
+# Java compilation outputs
+*.class
+
+# Temporary files
+*.tmp
+*.swp
+*~
+
+# Crash logs / JVM files
+hs_err_pid*
+replay_pid*
+
+# Maven wrapper files
+.mvn/wrapper/maven-wrapper.jar
