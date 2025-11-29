@@ -55,6 +55,8 @@ public class PlaylistRecommenderTest {
         testTitle = "";
         result = PlaylistRecommender.isValidTrackTitle(testTitle);
         assertFalse(result);
+
+        assertFalse(PlaylistRecommender.isValidTrackTitle(null));
     }
 
     @Test
