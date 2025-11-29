@@ -5,17 +5,44 @@ import java.util.List;
 public class PlaylistRecommender {
 
     public static String classifyEnergy(List<Integer> bpms) {
-        // TODO: Implement classifyEnergy()
-        throw new UnsupportedOperationException("Not implemented");
+        if(bpms == null)
+            throw new IllegalArgumentException("bpms is null");
+        if(bpms.isEmpty())
+            throw new IllegalArgumentException("bpms is empty");
+
+        int total = 0;
+        for(int i = 0; i < bpms.size(); i++) {
+            total += bpms.get(i);
+        }
+
+        int avg = total / bpms.size();
+        if(avg >= 140) 
+            return "HIGH";
+        else if(avg >= 100 && avg <= 139)
+            return "MEDIUM";
+        else
+            return "LOW";
     }
 
-    public static boolean isValidTrackTitle(String title) {
-        // TODO: Implement isValidTrackTitle()
-        throw new UnsupportedOperationException("Not implemented");
+    public static boolean isValidTrackTitle(String title) { 
+        if(title == null || title.length() < 1 || title.length() > 30) {
+            return false;
+        }
+
+        for(char c : title.toCharArray()) {
+            if(!Character.isLetter(c) && c != ' ') {
+                return false;
+            }
+        }
+        return true;
     }
 
     public static int normalizeVolume(int volumeDb) {
-        // TODO: Implement normalizeVolume()
-        throw new UnsupportedOperationException("Not implemented");
+        if(volumeDb > 100) 
+            return 100;
+        else if(volumeDb < 0)
+            return 0;
+        else
+            return volumeDb;
     }
 }
